@@ -1,0 +1,4 @@
+ignore:
+  resource_names:
+      - IdentityPool
+model_name: cognito-identity
