@@ -47,6 +47,9 @@
           "minimum": 1,
           "maximum": 65535
         },
+        "replicas": {
+          "type": "integer"
+        },
         "nodeSelector": {
           "type": "object"
         },
@@ -58,12 +61,29 @@
         },
         "priorityClassName": {
           "type": "string"
+        },
+        "extraVolumeMounts": {
+          "type": "array"
+        },
+        "extraVolumes": {
+          "type": "array"
+        },
+        "extraEnvVars": {
+          "type": "array"
         }
       },
       "required": [
           "containerPort"
       ],
       "type": "object"
+    },
+    "role": {
+      "description": "Role settings",
+      "properties": {
+        "labels": {
+	  "type": "object"
+	}
+      }
     },
     "metrics": {
       "description": "Metrics settings",
@@ -188,12 +208,49 @@
       "type": "string",
       "enum": ["cluster", "namespace"]
     },
+    "watchNamespace": {
+      "type": "string"
+    },    
     "resourceTags": {
       "type": "array",
       "items": {
         "type": "string",
         "pattern": "(^$|^.*=.*$)"
       }
+    },
+    "deletionPolicy": {
+      "type": "string",
+      "enum": ["delete", "retain"]
+    },
+    "reconcile": {
+      "description": "Reconcile settings. This is used to configure the controller's reconciliation behavior. e.g resyncPeriod and maxConcurrentSyncs",
+      "properties": {
+        "defaultResyncPeriod": {
+          "type": "number"
+        },
+        "resourceResyncPeriods": {
+          "type": "object"
+        },
+        "defaultMaxConcurentSyncs": {
+          "type": "number"
+        },
+        "resourceMaxConcurrentSyncs": {
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "leaderElection": {
+      "description": "Parameter to configure the controller's leader election system.",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "namespace": {
+          "type": "string"
+        }
+      },
+      "type": "object"
     },
     "serviceAccount": {
       "description": "ServiceAccount settings",
@@ -209,6 +266,13 @@
         }
       },
       "type": "object"
+    }
+  },
+  "featureGates": {
+    "description": "Feature gates settings",
+    "type": "object",
+    "additionalProperties": {
+      "type": "boolean"
     }
   },
   "required": [
