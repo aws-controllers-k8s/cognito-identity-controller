@@ -13,7 +13,9 @@ description: |-
   **About Amazon Cognito Identity**
 
 
-  {ADD YOUR DESCRIPTION HERE}
+  Amazon Cognito handles user authentication and authorization for your web and mobile apps. With user pools, you can easily
+  and securely add sign-up and sign-in functionality to your apps. With identity pools (federated identities), your apps can 
+  get temporary credentials that grant users access to specific AWS resources, whether the users are anonymous or are signed in.
 
 
   **About the AWS Controllers for Kubernetes**
@@ -22,13 +24,11 @@ description: |-
   This controller is a component of the [AWS Controller for Kubernetes](https://github.com/aws/aws-controllers-k8s)
   project. This project is currently in **developer preview**.
 samples:
-- kind: ExampleCustomKind
-  spec: '{}'
-- kind: SecondExampleCustomKind
+- kind: UserPool
   spec: '{}'
 maintainers:
 - name: "cognitoidentity maintainer team"
   email: "ack-maintainers@amazon.com"
 links:
 - name: Amazon Cognito Identity Developer Resources
-  url: "{YOUR SERVICE DEVELOPER RESOURCES URL}"
+  url: https://aws.amazon.com/cognito/dev-resources/
