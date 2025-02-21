@@ -32,15 +32,15 @@ const (
 type MappingRuleMatchType string
 
 const (
-	MappingRuleMatchType_Equals     MappingRuleMatchType = "Equals"
 	MappingRuleMatchType_Contains   MappingRuleMatchType = "Contains"
-	MappingRuleMatchType_StartsWith MappingRuleMatchType = "StartsWith"
+	MappingRuleMatchType_Equals     MappingRuleMatchType = "Equals"
 	MappingRuleMatchType_NotEqual   MappingRuleMatchType = "NotEqual"
+	MappingRuleMatchType_StartsWith MappingRuleMatchType = "StartsWith"
 )
 
 type RoleMappingType string
 
 const (
-	RoleMappingType_Token RoleMappingType = "Token"
 	RoleMappingType_Rules RoleMappingType = "Rules"
+	RoleMappingType_Token RoleMappingType = "Token"
 )

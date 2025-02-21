@@ -1,4 +1,5 @@
 ignore:
   resource_names:
       - IdentityPool
-model_name: cognito-identity
+sdk_names:
+  model_name: cognito-identity
